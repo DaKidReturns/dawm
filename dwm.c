@@ -268,6 +268,9 @@ static Drw *drw;
 static Monitor *mons, *selmon;
 static Window root, wmcheckwin;
 
+/* Adding custom patches */
+#include "patches.c"
+
 /* configuration, allows nested code to access above variables */
 #include "config.h"
 
