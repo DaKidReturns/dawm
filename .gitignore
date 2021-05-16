@@ -1,2 +1,2 @@
-./dwm
-./dwm.o
+dwm
+*.o
