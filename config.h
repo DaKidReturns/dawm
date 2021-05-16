@@ -1,8 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int borderpx  = 5;        /* border pixel of windows */
+static const unsigned int snap      = 10;       /* snap pixel */
 static const unsigned int gappx     = 5;
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -31,6 +31,8 @@ static const Rule rules[] = {
 	{ "Gimp",           NULL,       NULL,       0,            1,           -1 },
 	{ "Brave-browser",  NULL,       NULL,       1 << 1,       0,           -1 },
     { "Pavucontrol",    NULL,       NULL,       0,            1,           -1 },
+    { "Thunar",         NULL,       NULL,       1 << 2,       0,           -1 },
+    { "Zathura",        NULL,       NULL,       1 << 3,       0,           -1 },
 };
 
 /* layout(s) */
@@ -70,7 +72,7 @@ static const char *screenshotcmd[]    =     { "scrot","SS_%Y-%m-%d_%H::%M::%S_$w
 static Key keys[] = {
 	/* modifier                             key                        function        argument */
 	{ MODKEY,                               XK_p,                      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                               XK_n,                      spawn,          {.v = termcmd } },
+	{ MODKEY,                               XK_u,                      spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,                     XK_b,                      togglebar,      {0} },
 	{ MODKEY,                               XK_j,                      focusstack,     {.i = +1 } },
 	{ MODKEY,                               XK_k,                      focusstack,     {.i = -1 } },
@@ -78,6 +80,8 @@ static Key keys[] = {
 	{ MODKEY,                               XK_d,                      incnmaster,     {.i = -1 } },
 	{ MODKEY|ShiftMask,                     XK_j,                      inplacerotate,  {.i = -2 } },
 	{ MODKEY|ShiftMask,                     XK_k,                      inplacerotate,  {.i = +2 } },
+	{ MODKEY|ShiftMask,                     XK_h,                      inplacerotate,  {.i = -1 } },
+	{ MODKEY|ShiftMask,                     XK_l,                      inplacerotate,  {.i = +1 } },
 	{ MODKEY,                               XK_h,                      setmfact,       {.f = -0.05} },
 	{ MODKEY,                               XK_l,                      setmfact,       {.f = +0.05} },
 	{ MODKEY,                               XK_Return,                 zoom,           {0} },

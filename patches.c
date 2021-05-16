@@ -5,6 +5,9 @@ static void togglefullscr(const Arg *arg);
 /*From: From: Miles Alan <m@milesalan.com> */
 static void inplacerotate(const Arg *arg);
 
+/*From:MLquest8 <miskuzius@gmail.com>*/ 
+static void attachtop(Client *c);
+
 
 /*From: Soenke Lambert <s.lambert@mittwald.de> */
 void
@@ -82,4 +85,24 @@ inplacerotate(const Arg *arg)
     }
     arrange(selmon);
     focus(c);
+}
+
+/*From:MLquest8 <miskuzius@gmail.com>*/ 
+void 
+attachtop(Client *c)
+{
+    int n;
+    Monitor *m = selmon;
+    Client *below;
+
+    for (n = 1, below = c->mon->clients; 
+            below && below->next && (below->isfloating || !ISVISIBLEONTAG(below,c->tags) || n != m->nmaster);
+            n = below->isfloating || !ISVISIBLEONTAG(below,c->tags)? n + 0 : n + 1, below=below->next);
+    c->next=NULL;
+    if (below){
+        c->next = below->next;
+        below->next = c;
+    }
+    else
+        c->mon->clients = c;
 }
