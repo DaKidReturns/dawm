@@ -3,7 +3,7 @@
 /* appearance */
 static const unsigned int borderpx  = 5;        /* border pixel of windows */
 static const unsigned int snap      = 10;       /* snap pixel */
-static const unsigned int gappx     = 5;
+static const unsigned int gappx     = 8;
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
@@ -67,7 +67,7 @@ static const char *voldeccmd[]        =     { "pactl","set-sink-volume","@DEFAUL
 static const char *volmutecmd[]       =     { "pactl", "set-sink-mute","@DEFAULT_SINK@","toggle", NULL };
 static const char *brightnessup[]     =     { "xbacklight", "-inc","10" ,NULL };
 static const char *brightnessdown[]   =     { "xbacklight", "-dec","10" ,NULL };
-static const char *screenshotcmd[]    =     { "scrot","SS_%Y-%m-%d_%H::%M::%S_$wx$h.png","-q","100", "-e", "mv $f ~/Pictures/Screenshots/" ,NULL };
+static const char *screenshotcmd[]    =     { "scrot","SS_%Y%m%d%H%M%S_$wx$h.png","-q","100", "-e", "mv $f ~/Pictures/Screenshots/" ,NULL };
 
 static Key keys[] = {
 	/* modifier                             key                        function        argument */
