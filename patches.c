@@ -1,4 +1,5 @@
 
+
 /*From: Soenke Lambert <s.lambert@mittwald.de> */
 static void togglefullscr(const Arg *arg);
 
@@ -8,6 +9,12 @@ static void inplacerotate(const Arg *arg);
 /*From:MLquest8 <miskuzius@gmail.com>*/ 
 static void attachtop(Client *c);
 
+/* 
+  Maciej Janicki mail@macjanicki.eu
+  David Julien swy7ch@protonmail.com (20200504-b2e1dfc port)
+  Klein Bottle kleinbottle4@gmail.com (dwm-fullgaps-toggle...) 
+*/
+static void setgaps(const Arg *arg);
 
 /*From: Soenke Lambert <s.lambert@mittwald.de> */
 void
@@ -105,4 +112,14 @@ attachtop(Client *c)
     }
     else
         c->mon->clients = c;
+}
+
+void
+setgaps(const Arg *arg)
+{
+    if ((arg->i == 0 ) || (selmon->gappx + arg->i < 0))
+        selmon->gappx = 0;
+    else
+        selmon->gappx += arg->i;
+    arrange(selmon);
 }
