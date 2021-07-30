@@ -5,7 +5,7 @@ static void togglefullscr(const Arg *arg);
 // From: From: Miles Alan <m@milesalan.com>
 static void inplacerotate(const Arg *arg);
 
-/*From:MLquest8 <miskuzius@gmail.com>
+// From:MLquest8 <miskuzius@gmail.com>
 static void attachtop(Client *c);
 
   Maciej Janicki mail@macjanicki.eu
@@ -211,3 +211,5 @@ tile(Monitor *m)
 			ty += HEIGHT(c) + m->gappx;
 		}
 }
+
+// vim: set foldmarker=/*,*/:

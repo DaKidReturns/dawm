@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 5;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 3;       /* snap pixel */
 static const unsigned int gappx     = 0;
 static const unsigned int lockfullscreen = 1;
@@ -10,7 +10,6 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 //static const char *fonts[]          = {"monospace:size=10","Nerd Font:size=11","Font Awesome 5:size=9" };
 //static const char *fonts[]          = {"Ubuntu:style=Light Italic:size=11","Symbols Nerd Font:style=2048-em:size=13" };
 static const char *fonts[]          = {"Sarasa Mono K:size=11","Symbols Nerd Font:style=2048-em:size=13" };
-//static const char *fonts[]          = {"ProggySquare:size=9","Font Awesome 5:size=9" };
 static const int focusonwheel       = 1;
 static const char dmenufont[]       = "Sarasa Mono K:size=12";
 static const char normbg[]          = "#2e3440";
@@ -19,6 +18,7 @@ static const char normfg[]          = "#d8dee9";
 static const char selfg[]           = "#eeeeee";
 static const char selbg[]           = "#4c566a";
 static const char selborder[]       = "#5b73a3";
+//static const char selborder[]       = "#ffffff";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { normfg, normbg, normborder },
@@ -38,13 +38,12 @@ static const Rule rules[] = {
 	{ "feh",                       NULL,       NULL,       0,            1,           -1 },
 	{ "vlc",                       NULL,       NULL,       0,            1,           -1 },
     { "Pavucontrol",               NULL,       NULL,       0,            1,           -1 },
-    { "Tor Browser",               NULL,       NULL,       1 << 8,       1,           -1 },
 	{ "firefox",                   NULL,       NULL,       1 << 1,       0,           -1 },
     { "Thunar",                    NULL,       NULL,       1 << 2,       0,           -1 },
     { "Zathura",                   NULL,       NULL,       1 << 3,       0,           -1 },
     { "libreoffice-writer",        NULL,       NULL,       1 << 5,       0,           -1 },
     { "libreoffice-startcenter",   NULL,       NULL,       1 << 5,       0,           -1 },
-    { "TelegramDesktop",           NULL,       NULL,       1 << 7,       0,           -1 },
+    { "Tor Browser",               NULL,       NULL,       1 << 8,       1,           -1 },
 };
 
 /* layout(s) */

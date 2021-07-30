@@ -34,7 +34,7 @@ dist: clean
 	cp -R LICENSE Makefile README config.def.h config.mk\
 		dwm.1 drw.h util.h ${SRC} dwm.png transient.c dwm-${VERSION}
 	tar -cf dwm-${VERSION}.tar dwm-${VERSION}
-	gzip dwm-${VERSION}.tar
+	xz dwm-${VERSION}.tar
 	rm -rf dwm-${VERSION}
 
 install: all
