@@ -434,8 +434,8 @@ buttonpress(XEvent *e)
 	XButtonPressedEvent *ev = &e->xbutton;
 
 	click = ClkRootWin;
-	/* focus monitor if necessary */
-  /*
+	// focus monitor if necessary 
+
 	if ((m = wintomon(ev->window)) && m != selmon) {
 		unfocus(selmon->sel, 1);
 		selmon = m;
